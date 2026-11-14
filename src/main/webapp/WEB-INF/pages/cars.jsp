@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:pageTemplate pageTitle="Cars">
     <h1>Cars</h1>
@@ -12,21 +13,13 @@
         </tr>
         </thead>
         <tbody>
+        <c:forEach var="car" items="${cars}">
         <tr>
-            <th scope="row">Car 1</th>
-            <td>Spot 1</td>
-            <td>User 1</td>
+            <th scope="row">${car.licensePlate}</th>
+            <td>${car.parkingSpot}</td>
+            <td>${car.ownerName}</td>
         </tr>
-        <tr>
-            <th scope="row">Car 2</th>
-            <td>Spot 2</td>
-            <td>User 2</td>
-        </tr>
-        <tr>
-            <th scope="row">Car 3</th>
-            <td>Spot 3</td>
-            <td>User 3</td>
-        </tr>
+        </c:forEach>
         </tbody>
     </table>
     <h5>Free parking spots: ${numberOfFreeParkingSpots}</h5>
