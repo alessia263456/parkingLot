@@ -32,7 +32,7 @@ public class UserBean {
     public List<UserDto> copyUsersToDto(List<User> users){
         List<UserDto> dtos = new ArrayList<>();
         for (User user : users) {
-            dtos.add(new UserDto(user.getUsername(), user.getEmail()));
+            dtos.add(new UserDto(user.getId(),user.getUsername(), user.getEmail()));
         }
         return dtos;
     }
